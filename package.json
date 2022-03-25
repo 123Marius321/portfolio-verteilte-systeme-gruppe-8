@@ -1,0 +1,25 @@
+{
+  "name": "restaurant-api",
+  "version": "1.0.0",
+  "description": "Funktionsumfang: API für ein Restaurant\r     • Collection Essen\r     • Collection Mitarbeiter\r     • Collection Lieferanten",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/123Marius321/portfolio-verteilte-systeme-gruppe-8.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/123Marius321/portfolio-verteilte-systeme-gruppe-8/issues"
+  },
+  "homepage": "https://github.com/123Marius321/portfolio-verteilte-systeme-gruppe-8#readme",
+  "dependencies": {
+    "express": "^4.17.3",
+    "express-validator": "^6.14.0",
+    "nodemon": "^2.0.15"
+  }
+}
