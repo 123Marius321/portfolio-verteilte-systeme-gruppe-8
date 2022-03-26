@@ -2,10 +2,9 @@
   "name": "restaurant-api",
   "version": "1.0.0",
   "description": "Funktionsumfang: API für ein Restaurant\r     • Collection Essen\r     • Collection Mitarbeiter\r     • Collection Lieferanten",
-  "main": "index.js",
   "type": "module",
   "scripts": {
-    "start": "nodemon index.js"
+    "start": "nodemon src/index.js"
   },
   "repository": {
     "type": "git",
