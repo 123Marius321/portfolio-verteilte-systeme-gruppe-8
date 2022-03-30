@@ -1,9 +1,9 @@
 import express from "express";
 import {
-  //getFoodByName,  
-  getFoodById,
-  //getFood,
-  foodValidators,
+  getFood,
+  getFoodById,  
+  updateFoodValidators,
+  newFoodValidators,
   updateFoodById,
   addFood,
   deleteFoodById,
@@ -11,13 +11,13 @@ import {
 
 const router = express.Router();
 
-//router.get("/", getFood);
-//router.get("/search", getFoodByName);
+router.get("/", getFood);
+
 router.get("/:id", getFoodById);
 
-router.put("/:id", foodValidators, updateFoodById);
+router.put("/:id", updateFoodValidators, updateFoodById)
 
-router.post("/", foodValidators, addFood);
+router.post("/", newFoodValidators, addFood);
 
 router.delete("/:id", deleteFoodById);
 

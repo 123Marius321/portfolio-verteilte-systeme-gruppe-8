@@ -1,3 +1,12 @@
+# dependencies
+node_modules
+
+# ide settings
+.vscode
+
+# db logs
+.db
+
 # Logs
 logs
 *.log
@@ -102,3 +111,4 @@ dist
 
 # TernJS port file
 .tern-port
+
