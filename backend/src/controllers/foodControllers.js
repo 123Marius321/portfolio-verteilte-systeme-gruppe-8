@@ -1,10 +1,10 @@
 import { check, validationResult } from "express-validator";
 import { Food } from "../models/food.js";
 
-export const getFoodById = async (req, res) => {
-  const result = await Food.findById( req.params.id );
+export const getFoodByNumber = async (req, res) => {
+  const result = await Food.find( { number: req.params.number } );
   if (result.length == 0) {
-    return res.status(400).send({ error: `ID ${req.params.id} doesn't exist` });
+    return res.status(400).send({ error: `Number ${req.params.number} doesn't exist` });
   }
   res.status(200).send(result);
 };
@@ -14,62 +14,65 @@ export const getFood = async (req, res) => {
   res.status(200).send(result);
 };
 
-export const updateFoodById = async (req, res) => {
-  const result = await Food.findById( req.params.id );
+export const updateFoodByNumber = async (req, res) => {
+  const result = await Food.find( { number: req.params.number } );
   if (result.length == 0) {
-    return res.status(400).send({ error: `ID ${req.params.id} doesn't exist` });
+    return res.status(400).send({ error: `Number ${req.params.number} doesn't exist` });
   }
   const errors = validationResult(req);
   if (!errors.isEmpty()) {
     return res.status(400).json({ errors: errors.array() });
   }
   const updatedFood = new Food ({
-    _id: req.params.id, 
+    number: req.params.number, 
     name: req.body.name, 
     price: req.body.price, 
     course: req.body.course
   });
   await Food.replaceOne(
-    { _id: req.params.id },
-    { name: req.body.name, price : req.body.price, course : req.body.course }
+    { number: req.params.number },
+    { number: req.params.number, 
+      name: req.body.name, 
+      price : req.body.price, 
+      course : req.body.course }
   );
   res.status(200).send(updatedFood);
 };
 
 export const addFood = async (req, res) => {
+  const result = await Food.find( { number: req.body.number } );
+  if (result.length != 0) {
+    return res.status(400).send({ error: `Number ${req.body.number} already exists` });
+  }
   const errors = validationResult(req);
   if (!errors.isEmpty()) {
     return res.status(400).json({ errors: errors.array() });
   }
   const food = new Food({
-    _id: req.body._id,
+    number: req.body.number,
     name: req.body.name,
     price: req.body.price,
-    course: req.body.course,
+    course: req.body.course
   });
   food.save(food);
-  /*Food.insertOne({
-    _id: req.body._id,
-    name: req.body.name,
-    price: req.body.price,
-    course: req.body.course,
-  });*/
   res.status(201).send(food);
 };
 
-export const deleteFoodById = async (req, res) => {
-  const result = await Food.findById( req.params.id );
+export const deleteFoodByNumber = async (req, res) => {
+  const result = await Food.find( { number: req.params.number } );
   if (result.length == 0) {
-    return res.status(400).send({ error: `ID ${req.params.id} doesn't exist` });
+    return res.status(400).send({ error: `Number ${req.params.number} doesn't exist` });
   }
   const deletedFood = new Food({
-    _id: result._id,
+    number: result.number,
     name: result.name,
-    price: result.Foodprice,
+    price: result.price,
     course: result.course,
   });
-  await Food.deleteOne( { _id: req.params.id} );
-  res.status(200).send(`Deleted ${deletedFood.name} with Id ${deletedFood._id} from food collection`);
+  console.log(deletedFood);
+  await Food.deleteOne( { number: req.params.number } );
+  console.log(deletedFood);
+  res.status(200).send(`Deleted successful`);
 };
 
 export const updateFoodValidators = [
@@ -81,11 +84,11 @@ export const updateFoodValidators = [
       return false;
     }
     return true;
-  }).withMessage('Invalid Course')
+  }).withMessage('invalid Course - valid input: Vorspeise, Hauptspeise, Dessert')
 ];
 
 export const newFoodValidators = [
-  check("_id").notEmpty().withMessage("_id field required"),
+  check("number").notEmpty().withMessage("number field required"),
   check("name").notEmpty().withMessage("name field required"),
   check("price").notEmpty().withMessage("price field required"),
   check("course").notEmpty().withMessage("course field required"),
@@ -94,15 +97,6 @@ export const newFoodValidators = [
       return false;
     }
     return true;
-  }).withMessage('Invalid Course')
+  }).withMessage('invalid Course - valid input: Vorspeise, Hauptspeise, Dessert')
 ];
 
-
-
-/*export const getFoodByName = (req, res) => {
-  let result = food.filter((food) => food.name == req.query.name);
-  res.status(200).send(result);
-};*/
-/*export const getFood = (req, res) => {
-  res.status(200).send(food);
-};*/

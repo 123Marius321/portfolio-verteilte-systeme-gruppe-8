@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 
 const foodSchema = new mongoose.Schema({
-    _id: Number,
+    number: Number,
     name: String,
     price: Number,
     course: String,

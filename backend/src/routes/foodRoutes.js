@@ -1,24 +1,24 @@
 import express from "express";
 import {
   getFood,
-  getFoodById,  
+  getFoodByNumber,  
   updateFoodValidators,
   newFoodValidators,
-  updateFoodById,
+  updateFoodByNumber,
   addFood,
-  deleteFoodById,
+  deleteFoodByNumber,
 } from "../controllers/foodControllers.js";
 
 const router = express.Router();
 
 router.get("/", getFood);
 
-router.get("/:id", getFoodById);
+router.get("/:number", getFoodByNumber);
 
-router.put("/:id", updateFoodValidators, updateFoodById)
+router.put("/:number", updateFoodValidators, updateFoodByNumber)
 
 router.post("/", newFoodValidators, addFood);
 
-router.delete("/:id", deleteFoodById);
+router.delete("/:number", deleteFoodByNumber);
 
 export default router;
