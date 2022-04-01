@@ -15,10 +15,10 @@ router.get("/", getSupplier);
 
 router.get("/:number", getSupplierByNumber);
 
-router.put("/:number", updateSupplierValidators, updateSupplierByNumber)
+router.put("/update/:number", updateSupplierValidators, updateSupplierByNumber)
 
-router.post("/", newSupplierValidators, addSupplier);
+router.post("/add", newSupplierValidators, addSupplier);
 
-router.delete("/:number", deleteSupplierByNumber);
+router.delete("/remove/:number", deleteSupplierByNumber);
 
 export default router;

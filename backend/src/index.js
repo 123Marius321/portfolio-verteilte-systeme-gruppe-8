@@ -4,6 +4,8 @@ import foodRoutes from "./routes/foodRoutes.js";
 import employeeRoutes from "./routes/employeeRoutes.js";
 import supplierRoutes from "./routes/supplierRoutes.js";
 import mongoose from "mongoose";
+import swaggerUi from "swagger-ui-express";
+import swaggerDocs from "../swaggerDocs.js";
 
 const app = express();
 const port = 4000;
@@ -13,6 +15,7 @@ app.use(bodyParser.json());
 app.use("/food", foodRoutes);
 app.use("/employee", employeeRoutes);
 app.use("/supplier", supplierRoutes);
+app.use("/api", swaggerUi.serve, swaggerUi.setup(swaggerDocs));
 app.all("*", (req, res) => res.sendStatus(404));
 
 mongoose.connect("mongodb://mongo:27017/test").then(() => {

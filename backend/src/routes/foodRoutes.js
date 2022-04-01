@@ -15,10 +15,10 @@ router.get("/", getFood);
 
 router.get("/:number", getFoodByNumber);
 
-router.put("/:number", updateFoodValidators, updateFoodByNumber)
+router.put("/update/:number", updateFoodValidators, updateFoodByNumber)
 
-router.post("/", newFoodValidators, addFood);
+router.post("/add", newFoodValidators, addFood);
 
-router.delete("/:number", deleteFoodByNumber);
+router.delete("/remove/:number", deleteFoodByNumber);
 
 export default router;

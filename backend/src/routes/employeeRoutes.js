@@ -15,10 +15,10 @@ router.get("/", getEmployee);
 
 router.get("/:number", getEmployeeByNumber);
 
-router.put("/:number", updateEmployeeValidators, updateEmployeeByNumber)
+router.put("/update/:number", updateEmployeeValidators, updateEmployeeByNumber)
 
-router.post("/", newEmployeeValidators, addEmployee);
+router.post("/add", newEmployeeValidators, addEmployee);
 
-router.delete("/:number", deleteEmployeeByNumber);
+router.delete("/remove/:number", deleteEmployeeByNumber);
 
 export default router;
