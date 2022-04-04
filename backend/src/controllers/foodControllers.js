@@ -14,6 +14,7 @@ export const getFoodByNumber = async (req, res) => {
 };
 
 export const getFood = async (req, res) => {
+    res.set("Access-Control-Allow-Origin", "http://localhost:3000");
     const result = await Food.find();
     res.status(200).send(result);
 };
