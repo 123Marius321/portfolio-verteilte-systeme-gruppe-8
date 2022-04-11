@@ -142,7 +142,7 @@ const swaggerDocs = {
         "/food/remove/{number}": {
             delete: {
                 tags: ["Food"],
-                summary: "Delete food",
+                summary: "Delete food by number",
                 parameters: [
                     {
                         name: "number",
@@ -284,7 +284,7 @@ const swaggerDocs = {
         "/employee/remove/{number}": {
             delete: {
                 tags: ["Employee"],
-                summary: "Delete employee",
+                summary: "Delete employee by number",
                 parameters: [
                     {
                         name: "number",
@@ -426,7 +426,7 @@ const swaggerDocs = {
         "/supplier/remove/{number}": {
             delete: {
                 tags: ["Supplier"],
-                summary: "Delete Supplier",
+                summary: "Delete supplier by number",
                 parameters: [
                     {
                         name: "number",
@@ -506,7 +506,7 @@ const swaggerDocs = {
                 }
             }
         },
-        Suppliers: {
+        Supplier: {
             required: [
                 "number", "companyName", "delivery", "deliveryDay"
             ],

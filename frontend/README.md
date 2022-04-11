@@ -1,4 +1,4 @@
-# Example Restaurant Webpage 📚 📚
+# 🍳 Restaurant Webpage 🍳
 
 Uses GET /food from backend service to display all currently saved food on a plain webpage
 
@@ -10,6 +10,4 @@ Uses GET /food from backend service to display all currently saved food on a pla
 - **index.js**: React app entry point
 - **App.js**: contains a simple React function that displays API data
 - **RestClient.js**: contains a fetcher function to get backend data
-- **package.json**: contains all app dependencies, as well as scripts and meta
-  information
-
+- **package.json**: contains all app dependencies, as well as scripts and meta information

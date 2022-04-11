@@ -29,9 +29,10 @@ class App extends React.Component {
           <div>
             course: number - name - price
           </div>
+          <br></br>
           {this.state.food.map((food, key) => (
             <div key={key}>
-             {food.course}: {food.number} - {food.name} - {food.price} 
+             {food.course}: {food.number} - {food.name} - {food.price}$ 
             </div>
           ))}
         </div>
