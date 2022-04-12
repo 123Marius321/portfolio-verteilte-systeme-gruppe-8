@@ -1,7 +1,7 @@
 import express from "express";
 import {
   getEmployee,
-  getEmployeeByNumber,  
+  getEmployeeByNumber,
   updateEmployeeValidators,
   newEmployeeValidators,
   updateEmployeeByNumber,
@@ -15,7 +15,7 @@ router.get("/", getEmployee);
 
 router.get("/:number", getEmployeeByNumber);
 
-router.put("/update/:number", updateEmployeeValidators, updateEmployeeByNumber)
+router.put("/update/:number", updateEmployeeValidators, updateEmployeeByNumber);
 
 router.post("/add", newEmployeeValidators, addEmployee);
 

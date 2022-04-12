@@ -2,12 +2,17 @@
 
 Hierbei handelt es sich um REST-API, die Restaurants in ihr System einbinden können. Diese ermöglicht es Gerichte aus der Speisekarte eines Restaurants, dessen Lieferanten und Mitarbeiter zu erfassen und mit diesen Daten zu arbeiten.  
 
-### Run 'docker-compose up --build' to start server and MongoDB
+
+## Inbetriebnahme
+
+- Run 'cd backend' to switch to backend-folder
+- Run 'npm i' to install needed packages
+- Run 'docker-compose up --build' to start server and MongoDB
+
 
 ## API calls
 
-
-### food collection
+#### food collection
 
 - GET /food
     -> Get all food from the system
@@ -20,7 +25,7 @@ Hierbei handelt es sich um REST-API, die Restaurants in ihr System einbinden kö
 - DELETE /food/remove/{number}
     -> Delete food by number
 
-### employee collection
+#### employee collection
 
 - GET /employee
     -> Get all employees from the system
@@ -33,7 +38,7 @@ Hierbei handelt es sich um REST-API, die Restaurants in ihr System einbinden kö
 - DELETE /employee/remove/{number}
     -> Delete employee by number
 
-### supplier collection
+#### supplier collection
 
 - GET /supplier
     -> Get all suppliers from the system
@@ -46,7 +51,7 @@ Hierbei handelt es sich um REST-API, die Restaurants in ihr System einbinden kö
 - DELETE /supplier/remove/{number}
     -> Delete supplier by number
 
-### Documentation
+#### Documentation
 
 - Go to http://localhost:4000/api 
 

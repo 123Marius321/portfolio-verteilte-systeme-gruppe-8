@@ -1,7 +1,7 @@
 import express from "express";
 import {
   getSupplier,
-  getSupplierByNumber,  
+  getSupplierByNumber,
   updateSupplierValidators,
   newSupplierValidators,
   updateSupplierByNumber,
@@ -15,7 +15,7 @@ router.get("/", getSupplier);
 
 router.get("/:number", getSupplierByNumber);
 
-router.put("/update/:number", updateSupplierValidators, updateSupplierByNumber)
+router.put("/update/:number", updateSupplierValidators, updateSupplierByNumber);
 
 router.post("/add", newSupplierValidators, addSupplier);
 

@@ -1,7 +1,7 @@
 import express from "express";
 import {
   getFood,
-  getFoodByNumber,  
+  getFoodByNumber,
   updateFoodValidators,
   newFoodValidators,
   updateFoodByNumber,
@@ -15,7 +15,7 @@ router.get("/", getFood);
 
 router.get("/:number", getFoodByNumber);
 
-router.put("/update/:number", updateFoodValidators, updateFoodByNumber)
+router.put("/update/:number", updateFoodValidators, updateFoodByNumber);
 
 router.post("/add", newFoodValidators, addFood);
 

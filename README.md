@@ -1,6 +1,6 @@
 # Prüfungsfragen
 
-## Beschreibt ein konkretes Anwendungsszenario für den entwickelten Service und schildert (in wenigen Worten) eine mögliche Gesamt-Architektur in welcher sich dieser befinden könnte.
+### Beschreibt ein konkretes Anwendungsszenario für den entwickelten Service und schildert (in wenigen Worten) eine mögliche Gesamt-Architektur in welcher sich dieser befinden könnte.
 
 Unser Service kann von einem Restaurant verwendet werden. Der Service ermöglicht dem Nutzer Gerichte aus seiner Speisekarte in die Datenbank einzupflegen, sie abzurufen, zu ändern und wieder zu löschen. 
 Des Weiteren kann der Restaurantbesitzer durch den Service Personaldaten zu seinen Angestellten in der gleichen Datenbank sammeln und bearbeiten.
@@ -13,7 +13,7 @@ Folgende Schichten sind empfehlenswert:
     - Datenschicht: Ablage der Daten in einer Datenbank (MongoDB)
 
 
-## Welche Probleme können entstehen, wenn der entwickelte Service von mehreren Parteien verwendet wird? Beschreibt zwei Probleme sowie mögliche Lösungen.
+### Welche Probleme können entstehen, wenn der entwickelte Service von mehreren Parteien verwendet wird? Beschreibt zwei Probleme sowie mögliche Lösungen.
 
 Ein mögliches Problem könnte die Überlastung des Service aufgrund zu vieler Benutzeranfragen zur gleichen Zeit sein.
 Dies könnte zur Folge haben, dass Benutzeranfragen abgelehnt werden, oder der Service ausfällt.  
@@ -25,7 +25,7 @@ Ein weiteres Problem könnten gleichzeitige Zugriffe zweier Personen auf das gle
 Gelöst werden könnte dieses Problem, indem das passende Datenbank-Isolationslevel und Locks genutzt werden, die verhindern, dass an durch Zugriffe gesperrte Dokumente Änderungen vorgenommen werden können.
 
 
-## Was ist abseits der reinen Programmierung für die Produktivsetzung des entwickelten Services zu beachten? Nenne mindestens zwei Aspekte und führe diese in ein paar Sätzen aus.
+### Was ist abseits der reinen Programmierung für die Produktivsetzung des entwickelten Services zu beachten? Nenne mindestens zwei Aspekte und führe diese in ein paar Sätzen aus.
 
 Bevor der Service veröffentlicht werden kann, sind umfangreiche Tests zu planen und durchzuführen. Hierbei sollten sowohl die Funktionen des Service an sich, als auch die Anbindung an das Frontend und die Datenbank getestet werden. Mögliche Tests wären die Durchführung von API-Requests mit Überprüfung des API-Response-Bodys auf den korrekten JSON-Inhalt.   
 
