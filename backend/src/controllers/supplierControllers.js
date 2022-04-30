@@ -88,7 +88,6 @@ export const deleteSupplierByNumber = async (req, res) => {
 };
 
 export const updateSupplierValidators = [
-  check("name").notEmpty().withMessage("name field required"),
   check("companyName").notEmpty().withMessage("companyName field required"),
   check("delivery")
     .isLength({ min: 1 })
